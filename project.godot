@@ -30,5 +30,6 @@ window/size/window_height_override=720
 
 2d_physics/layer_1="Terrain"
 2d_physics/layer_2="Core"
-2d_physics/layer_3="Enemy"
-2d_physics/layer_4="Enemy_Layer"
+2d_physics/layer_3="Shield"
+2d_physics/layer_4="Enemy"
+2d_physics/layer_5="Enemy_Collision_Box"

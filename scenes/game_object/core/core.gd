@@ -15,14 +15,18 @@ func _ready():
 	
 	
 func check_deal_damage():
+	print("check deal damage")
+	print(number_colliding_bodies)
 	if number_colliding_bodies == 0 or not damage_interval_timer.is_stopped():
 		return
 		
+	print("deal damage")
 	health_component.damage(1)
 	damage_interval_timer.start()
 	
 	
 func on_body_entered(other_body: Node2D):
+	print("body entered")
 	number_colliding_bodies += 1
 	check_deal_damage()
 	

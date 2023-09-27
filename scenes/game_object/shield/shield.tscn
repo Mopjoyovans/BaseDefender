@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2mvq8mrn3s00"]
+
+[ext_resource type="Script" path="res://scenes/game_object/shield/shield.gd" id="1_75p7o"]
+[ext_resource type="Texture2D" uid="uid://dv41rfcs8mv8m" path="res://scenes/game_object/shield/shield.png" id="1_ftibe"]
+[ext_resource type="PackedScene" uid="uid://hkan1yq5sv8q" path="res://scenes/component/health_component.tscn" id="2_u0bh2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2bck8"]
+radius = 198.091
+
+[node name="Shield" type="Node"]
+script = ExtResource("1_75p7o")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_u0bh2")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_ftibe")
+
+[node name="CollisionArea2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea2D"]
+shape = SubResource("CircleShape2D_2bck8")
