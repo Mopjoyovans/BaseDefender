@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://ce6i5vqkr58mi"]
+
+[ext_resource type="Script" path="res://scenes/game_object/core/core.gd" id="1_x3tmx"]
+[ext_resource type="PackedScene" uid="uid://hkan1yq5sv8q" path="res://scenes/component/health_component.tscn" id="2_0mp67"]
+[ext_resource type="Texture2D" uid="uid://csgarxi1awejr" path="res://scenes/game_object/core/core.png" id="3_dnk8e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k4f42"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mka1v"]
+radius = 8.0
+height = 16.0
+
+[node name="Core" type="CharacterBody2D" groups=["core"]]
+collision_layer = 0
+script = ExtResource("1_x3tmx")
+
+[node name="HealthComponent" parent="." instance=ExtResource("2_0mp67")]
+
+[node name="DamageIntervalTimer" type="Timer" parent="."]
+
+[node name="CollisionArea2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea2D"]
+shape = SubResource("CircleShape2D_k4f42")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_mka1v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_dnk8e")

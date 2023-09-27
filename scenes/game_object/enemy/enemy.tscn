@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://42csq3bkncbr"]
+
+[ext_resource type="Script" path="res://scenes/game_object/enemy/enemy.gd" id="1_2cjns"]
+[ext_resource type="PackedScene" uid="uid://hkan1yq5sv8q" path="res://scenes/component/health_component.tscn" id="1_o0utv"]
+[ext_resource type="Texture2D" uid="uid://c62gpf8hef0d6" path="res://scenes/game_object/enemy/enemy.png" id="2_6d7kj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hq444"]
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 9
+script = ExtResource("1_2cjns")
+
+[node name="HealthComponent" parent="." instance=ExtResource("1_o0utv")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6d7kj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hq444")
