@@ -3,6 +3,7 @@ class_name Core
 
 @onready var damage_interval_timer: Timer = $DamageIntervalTimer
 @onready var health_component: HealthComponent = $HealthComponent
+@onready var shield: Shield = $Shield
 
 var number_colliding_bodies = 0
 
@@ -17,8 +18,13 @@ func _ready():
 func check_deal_damage():
 	if number_colliding_bodies == 0 or not damage_interval_timer.is_stopped():
 		return
-		
-	health_component.damage(1)
+
+	if shield != null:
+		shield.damage(1)
+	else:
+		print(str("deal ", 1, " damage to core"))
+		health_component.damage(1)
+
 	damage_interval_timer.start()
 	
 	
