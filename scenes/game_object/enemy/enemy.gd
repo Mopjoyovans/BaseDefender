@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Enemy
 
-@export var attack_range: float = 20
+@export var attack_range: float = 200
 @export var max_speed = 40
 
 @onready var health_component: HealthComponent = $HealthComponent

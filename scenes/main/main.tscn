@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6noksvj0iw24"]
+[gd_scene load_steps=9 format=3 uid="uid://b6noksvj0iw24"]
 
 [ext_resource type="PackedScene" uid="uid://bcrsyovnv75st" path="res://scenes/enemy_spawner/enemy_spawner.tscn" id="1_ig26p"]
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_nx77a"]
 [ext_resource type="Texture2D" uid="uid://dc7xkx518047y" path="res://assets/environment/tilemap_packed.png" id="2_gmlgv"]
 [ext_resource type="Texture2D" uid="uid://bis4hrumq4s48" path="res://assets/environment/Base.png" id="2_r76cq"]
 [ext_resource type="PackedScene" uid="uid://ce6i5vqkr58mi" path="res://scenes/game_object/core/core.tscn" id="3_ap3pn"]
+[ext_resource type="PackedScene" uid="uid://b2mvq8mrn3s00" path="res://scenes/game_object/shield/shield.tscn" id="6_mb6fm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vqnnm"]
 texture = ExtResource("2_gmlgv")
@@ -42,3 +43,5 @@ texture = ExtResource("2_r76cq")
 unique_name_in_owner = true
 
 [node name="Enemies" type="Node" parent="." groups=["enemies_layer"]]
+
+[node name="Shield" parent="." instance=ExtResource("6_mb6fm")]
